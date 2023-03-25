@@ -1,0 +1,282 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Sat Mar 25 04:38:06 2023
+
+OUTPUT FILE NAME:   <driverlib_empty_project_sram_MSP_EXP432P401R_nortos_ccs.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0100032d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  000000e4  0003ff1c  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  0000042a  0000fbd6  RW X
+  SRAM_DATA             20000000   00010000  0000031a  0000fce6  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000000e4   000000e4    r--
+  00000000    00000000    000000e4   000000e4    r-- .intvecs
+01000000    01000000    0000042a   0000042a    r-x
+  01000000    01000000    0000042a   0000042a    r-x .text
+20000000    20000000    0000011a   0000011a    r--
+  20000000    20000000    0000011a   0000011a    r-- .const
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000e4     
+                  00000000    000000e4     startup_msp432p401r_ccs.obj (.intvecs:retain)
+
+.text      0    01000000    0000042a     
+                  01000000    00000178     main.obj (.text:getCharInt)
+                  01000178    00000078     system_msp432p401r.obj (.text:SystemInit)
+                  010001f0    0000005c     main.obj (.text:GLCD_init)
+                  0100024c    00000044     main.obj (.text:SPI_init)
+                  01000290    0000003c     main.obj (.text:SPI_write)
+                  010002cc    00000034     main.obj (.text:GLCD_putchar)
+                  01000300    0000002c     main.obj (.text:GLCD_clear)
+                  0100032c    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  01000358    0000002c     main.obj (.text:main)
+                  01000384    0000002a     main.obj (.text:GLCD_write_string)
+                  010003ae    00000026     main.obj (.text:GLCD_setCursor)
+                  010003d4    00000020     main.obj (.text:GLCD_command_write)
+                  010003f4    00000020     main.obj (.text:GLCD_data_write)
+                  01000414    0000000c     startup_msp432p401r_ccs.obj (.text:Reset_Handler)
+                  01000420    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  01000424    00000004                                   : exit.c.obj (.text:abort:abort)
+                  01000428    00000002     startup_msp432p401r_ccs.obj (.text:Default_Handler)
+
+.const     0    20000000    0000011a     
+                  20000000    0000011a     main.obj (.const:font_table)
+
+.cinit     0    01000000    00000000     UNINITIALIZED
+
+.init_array 
+*          0    01000000    00000000     UNINITIALIZED
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2000fe04    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                        code   ro data   rw data
+       ------                        ----   -------   -------
+    .\
+       main.obj                      880    282       0      
+       system_msp432p401r.obj        120    0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        1000   282       0      
+                                                             
+    .\ccs\
+       startup_msp432p401r_ccs.obj   14     228       0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        14     228       0      
+                                                             
+    C:\ti\ccs1220\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       boot_cortex_m.c.obj           44     0         0      
+       exit.c.obj                    4      0         0      
+       pre_init.c.obj                4      0         0      
+    +--+-----------------------------+------+---------+---------+
+       Total:                        52     0         0      
+                                                             
+       Stack:                        0      0         512    
+    +--+-----------------------------+------+---------+---------+
+       Grand Total:                  1066   510       512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                   
+-------   ----                   
+01000429  ADC14_IRQHandler       
+01000429  AES256_IRQHandler      
+01000429  BusFault_Handler       
+01000425  C$$EXIT                
+01000429  COMP_E0_IRQHandler     
+01000429  COMP_E1_IRQHandler     
+01000429  CS_IRQHandler          
+01000429  DMA_ERR_IRQHandler     
+01000429  DMA_INT0_IRQHandler    
+01000429  DMA_INT1_IRQHandler    
+01000429  DMA_INT2_IRQHandler    
+01000429  DMA_INT3_IRQHandler    
+01000429  DebugMon_Handler       
+01000429  Default_Handler        
+01000429  EUSCIA0_IRQHandler     
+01000429  EUSCIA1_IRQHandler     
+01000429  EUSCIA2_IRQHandler     
+01000429  EUSCIA3_IRQHandler     
+01000429  EUSCIB0_IRQHandler     
+01000429  EUSCIB1_IRQHandler     
+01000429  EUSCIB2_IRQHandler     
+01000429  EUSCIB3_IRQHandler     
+01000429  FLCTL_IRQHandler       
+01000429  FPU_IRQHandler         
+01000301  GLCD_clear             
+010003d5  GLCD_command_write     
+010003f5  GLCD_data_write        
+010001f1  GLCD_init              
+010002cd  GLCD_putchar           
+010003af  GLCD_setCursor         
+01000385  GLCD_write_string      
+01000429  HardFault_Handler      
+01000429  MemManage_Handler      
+01000429  NMI_Handler            
+01000429  PCM_IRQHandler         
+01000429  PORT1_IRQHandler       
+01000429  PORT2_IRQHandler       
+01000429  PORT3_IRQHandler       
+01000429  PORT4_IRQHandler       
+01000429  PORT5_IRQHandler       
+01000429  PORT6_IRQHandler       
+01000429  PSS_IRQHandler         
+01000429  PendSV_Handler         
+01000429  RTC_C_IRQHandler       
+01000415  Reset_Handler          
+0100024d  SPI_init               
+01000291  SPI_write              
+01000429  SVC_Handler            
+01000429  SysTick_Handler        
+01000179  SystemInit             
+01000429  T32_INT1_IRQHandler    
+01000429  T32_INT2_IRQHandler    
+01000429  T32_INTC_IRQHandler    
+01000429  TA0_0_IRQHandler       
+01000429  TA0_N_IRQHandler       
+01000429  TA1_0_IRQHandler       
+01000429  TA1_N_IRQHandler       
+01000429  TA2_0_IRQHandler       
+01000429  TA2_N_IRQHandler       
+01000429  TA3_0_IRQHandler       
+01000429  TA3_N_IRQHandler       
+01000429  UsageFault_Handler     
+4000480c  WDTCTL_SYM             
+01000429  WDT_A_IRQHandler       
+20010000  __STACK_END            
+00000200  __STACK_SIZE           
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+00000000  __TI_static_base__     
+ffffffff  __binit__              
+ffffffff  __c_args__             
+UNDEFED   __mpu_init             
+2000fe00  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+0100032d  _c_int00_noinit_noargs 
+01000421  _system_pre_init       
+01000425  abort                  
+ffffffff  binit                  
+20000000  font_table             
+01000001  getCharInt             
+00000000  interruptVectors       
+01000359  main                   
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                   
+-------   ----                   
+00000000  __TI_static_base__     
+00000000  interruptVectors       
+00000200  __STACK_SIZE           
+01000001  getCharInt             
+01000179  SystemInit             
+010001f1  GLCD_init              
+0100024d  SPI_init               
+01000291  SPI_write              
+010002cd  GLCD_putchar           
+01000301  GLCD_clear             
+0100032d  _c_int00_noinit_noargs 
+01000359  main                   
+01000385  GLCD_write_string      
+010003af  GLCD_setCursor         
+010003d5  GLCD_command_write     
+010003f5  GLCD_data_write        
+01000415  Reset_Handler          
+01000421  _system_pre_init       
+01000425  C$$EXIT                
+01000425  abort                  
+01000429  ADC14_IRQHandler       
+01000429  AES256_IRQHandler      
+01000429  BusFault_Handler       
+01000429  COMP_E0_IRQHandler     
+01000429  COMP_E1_IRQHandler     
+01000429  CS_IRQHandler          
+01000429  DMA_ERR_IRQHandler     
+01000429  DMA_INT0_IRQHandler    
+01000429  DMA_INT1_IRQHandler    
+01000429  DMA_INT2_IRQHandler    
+01000429  DMA_INT3_IRQHandler    
+01000429  DebugMon_Handler       
+01000429  Default_Handler        
+01000429  EUSCIA0_IRQHandler     
+01000429  EUSCIA1_IRQHandler     
+01000429  EUSCIA2_IRQHandler     
+01000429  EUSCIA3_IRQHandler     
+01000429  EUSCIB0_IRQHandler     
+01000429  EUSCIB1_IRQHandler     
+01000429  EUSCIB2_IRQHandler     
+01000429  EUSCIB3_IRQHandler     
+01000429  FLCTL_IRQHandler       
+01000429  FPU_IRQHandler         
+01000429  HardFault_Handler      
+01000429  MemManage_Handler      
+01000429  NMI_Handler            
+01000429  PCM_IRQHandler         
+01000429  PORT1_IRQHandler       
+01000429  PORT2_IRQHandler       
+01000429  PORT3_IRQHandler       
+01000429  PORT4_IRQHandler       
+01000429  PORT5_IRQHandler       
+01000429  PORT6_IRQHandler       
+01000429  PSS_IRQHandler         
+01000429  PendSV_Handler         
+01000429  RTC_C_IRQHandler       
+01000429  SVC_Handler            
+01000429  SysTick_Handler        
+01000429  T32_INT1_IRQHandler    
+01000429  T32_INT2_IRQHandler    
+01000429  T32_INTC_IRQHandler    
+01000429  TA0_0_IRQHandler       
+01000429  TA0_N_IRQHandler       
+01000429  TA1_0_IRQHandler       
+01000429  TA1_N_IRQHandler       
+01000429  TA2_0_IRQHandler       
+01000429  TA2_N_IRQHandler       
+01000429  TA3_0_IRQHandler       
+01000429  TA3_N_IRQHandler       
+01000429  UsageFault_Handler     
+01000429  WDT_A_IRQHandler       
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+20000000  font_table             
+2000fe00  __stack                
+20010000  __STACK_END            
+4000480c  WDTCTL_SYM             
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+ffffffff  __binit__              
+ffffffff  __c_args__             
+ffffffff  binit                  
+UNDEFED   __mpu_init             
+
+[84 symbols]
